@@ -1,5 +1,6 @@
 const express = require("express");
 const helmet = require("helmet");
+const cors = require('cors');
 
 const authRouter = require("../auth/auth-router.js");
 const usersRouter = require("../users/users-router.js");
@@ -8,6 +9,7 @@ const songsRouter = require("../songs/songs-router.js");
 const server = express();
 
 // Global Middleware
+server.use(cors());
 server.use(helmet());
 server.use(express.json());
 
