@@ -17,6 +17,7 @@ server.use(express.json());
 // Routes
 server.use("/api", authRouter);
 server.use("/api/users", authenticate, usersRouter);
-server.use("/api/songs", authenticate, songsRouter);
+// server.use("/api/songs", authenticate, songsRouter);
+server.use("/api/songs", songsRouter);
 
 module.exports = server;
