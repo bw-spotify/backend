@@ -17,6 +17,11 @@ describe("/api/users", () => {
         expect(user.body).toBeInstanceOf(Array);
       });
     });
+    describe('POST /login', () => {
+      it('should return status 200', () => {
+        
+      });
+    });
   });
   describe("User Model", () => {
     describe("get()", () => {
@@ -25,6 +30,9 @@ describe("/api/users", () => {
 
         expect(users).toBeDefined();
       });
+    });
+    describe('', () => {
+      
     });
   });
 });
