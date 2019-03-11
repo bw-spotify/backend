@@ -1,10 +1,11 @@
 const express = require("express");
 const helmet = require("helmet");
-const cors = require('cors');
+const cors = require("cors");
 
 const authRouter = require("../auth/auth-router.js");
 const usersRouter = require("../users/users-router.js");
 const songsRouter = require("../songs/songs-router.js");
+const { authenticate } = require("../auth/authenticate");
 
 const server = express();
 
@@ -15,7 +16,7 @@ server.use(express.json());
 
 // Routes
 server.use("/api", authRouter);
-server.use("/api/users", usersRouter);
-server.use("/api/songs", songsRouter);
+server.use("/api/users", authenticate, usersRouter);
+server.use("/api/songs", authenticate, songsRouter);
 
 module.exports = server;
