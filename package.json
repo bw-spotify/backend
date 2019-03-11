@@ -4,7 +4,9 @@
   "description": "Backend repo for Spotify Web App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/bw-spotify/backend/issues"
   },
-  "homepage": "https://github.com/bw-spotify/backend#readme"
+  "homepage": "https://github.com/bw-spotify/backend#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
