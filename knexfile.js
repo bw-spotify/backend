@@ -1,3 +1,5 @@
+const prodDbConnection = process.env.DATABASE_URL;
+
 module.exports = {
   development: {
     client: "sqlite3",
@@ -27,7 +29,7 @@ module.exports = {
   },
   production: {
     client: "pg",
-    connection: {}, // remote heroku connection TODO
+    connection: prodDbConnection,
     migrations: {
       directory: "./data/migrations"
     },
