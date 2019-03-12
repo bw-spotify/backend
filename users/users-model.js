@@ -2,10 +2,10 @@ const db = require("../data/knexConfig");
 
 module.exports = {
   get: function(id) {
-    const query = db("users");
+    const query = db("users as u");
 
-    if(id) {
-      return query.where( { id }).first();
+    if (id) {
+      query.where("u.id", id).first();
     }
 
     return query;

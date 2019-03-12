@@ -12,27 +12,38 @@ describe("/api/users", () => {
         expect(res.status).toBe(200);
       });
       it("should return a list of users", async () => {
-        const user = await request(server).get("/api/users");
+        const res = await request(server).get("/api/users");
 
-        expect(user.body).toBeInstanceOf(Array);
+        expect(res.body).toBeInstanceOf(Array);
       });
     });
-    describe('POST /login', () => {
-      it('should return status 200', () => {
-        
+    describe("GET /:id", () => {
+      it("should return 200", async () => {
+        const res = await request(server).get("/api/users/1");
+
+        expect(res.status).toBe(200);
+      });
+      it("should return id 1", async () => {
+        const res = await request(server).get("/api/users/1");
+
+        expect(res.body.id).toBe(1);
       });
     });
   });
   describe("User Model", () => {
     describe("get()", () => {
       it("should return users from the db", async () => {
-        const users = await Users.get();
+        const res = await Users.get();
 
-        expect(users).toBeDefined();
+        expect(res).toBeDefined();
       });
     });
-    describe('', () => {
-      
+    describe("get(id)", () => {
+      it("should return users from the db", async () => {
+        const res = await Users.get(1);
+
+        expect(res.id).toBe(1);
+      });
     });
   });
 });
