@@ -21,7 +21,7 @@ router.post("/:id/faves", async (req, res) => {
         const faves = await Faves.getUserFaves(req.params.id);
         res.status(201).json(faves);
       } else {
-        res.status(500).json({ error: "Error adding fave" });
+        res.status(500).json({ error: "Fave already exists" });
       }
     } catch (error) {
       res.status(500).json({ error: "Error adding fave" });
@@ -39,7 +39,7 @@ router.delete("/:id/faves", async (req, res) => {
       if (count > 0) {
         res.status(204).end();
       } else {
-        res.status(500).json({ error: "Error deleting fave" });
+        res.status(404).json({ error: "Fave not found" });
       }
     } catch (error) {
       res.status(500).json({ error: "Error deleting fave" });

@@ -14,8 +14,7 @@ exports.up = function(knex, Promise) {
       .onUpdate("cascade");
 
     tbl
-      .integer("song_id")
-      .unsigned()
+      .string("song_id")
       .notNullable()
       .references("id")
       .inTable("songs")
