@@ -38,24 +38,28 @@ router.post("/register", async (req, res) => {
       .json({ error: "Must provide username and password to register" });
   } else {
     try {
-      const hash = bcrypt.hashSync(password, 10);
-      req.body.password = hash;
-
-      const [id] = await Users.add(req.body);
-
-      const user = await Users.get(id);
-      if (user) {
-        const token = tokenService.generateToken(user);
-
-        res.status(200).json({
-          message: `Welcome ${user.username}. Here is your token.`,
-          token,
-          username: user.username
-        });
+      const checkUser = await Users.findBy({ username });
+      if (checkUser) {
+        res.status(400).json({ error: "User already exists" });
       } else {
-        res.status(404).json({ error: "Error registering user" });
+        const hash = bcrypt.hashSync(password, 10);
+        req.body.password = hash;
+
+        const [id] = await Users.add(req.body);
+
+        const user = await Users.get(id);
+        if (user) {
+          const token = tokenService.generateToken(user);
+
+          res.status(200).json({
+            message: `Welcome ${user.username}. Here is your token.`,
+            token,
+            username: user.username
+          });
+        } else {
+          res.status(404).json({ error: "Error registering user" });
+        }
       }
-      res.json(user);
     } catch (error) {
       res.status(500).json({ error: "Error registering user" });
     }
