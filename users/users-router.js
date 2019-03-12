@@ -1,7 +1,6 @@
 const router = require("express").Router();
 
 const Users = require("./users-model.js");
-const Faves = require("../faves/faves-model.js");
 
 router.get("/", async (req, res) => {
   try {

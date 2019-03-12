@@ -1,13 +1,25 @@
 const db = require("../data/knexConfig");
 
 module.exports = {
-  get: function(id) {
-    const query = db("songs").limit(20);
+  get: function(query) {
+    const {
+      page = 1,
+      limit = 10,
+      sortby = "artist_name",
+      sortdir = "desc",
+      id
+    } = query;
 
     if (id) {
-      return query.where({ id }).first();
+      return db("songs")
+        .where({ id })
+        .first();
     }
+    const offset = limit * (page - 1);
 
-    return query;
+    return db("songs")
+      .orderBy(sortby, sortdir)
+      .limit(limit)
+      .offset(offset);
   }
 };

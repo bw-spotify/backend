@@ -21,8 +21,13 @@ describe("/api/songs", () => {
   describe("Songs Model", () => {
     describe("get()", () => {
       it("should return songs from the db", async () => {
-        const songs = await Songs.get();
-
+        const query = {
+          page: 1,
+          limit: 10,
+          sortby: "artist_name",
+          sortdir: "desc"
+        };
+        const songs = await Songs.get(query);
         expect(songs).toBeDefined();
       });
     });
