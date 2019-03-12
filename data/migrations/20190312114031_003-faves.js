@@ -2,6 +2,8 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable("faves", tbl => {
     tbl.increments();
 
+    tbl.unique(["user_id", "song_id"]);
+
     tbl
       .integer("user_id")
       .unsigned()
@@ -25,5 +27,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.shema.dropTableIfExists("faves");
+  return knex.schema.dropTableIfExists("faves");
 };
