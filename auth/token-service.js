@@ -6,7 +6,7 @@ const secret =
 module.exports = {
   generateToken: function(user) {
     const payload = {
-      subject: user.id,
+      userId: user.id,
       username: user.username
     };
 

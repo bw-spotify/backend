@@ -13,6 +13,7 @@ router.post("/login", async (req, res) => {
   } else {
     try {
       const user = await Users.findBy({ username });
+      
       if (user && bcrypt.compareSync(password, user.password)) {
         const token = tokenService.generateToken(user);
 
@@ -21,6 +22,7 @@ router.post("/login", async (req, res) => {
           token,
           username: user.username
         });
+
       } else {
         res.status(401).json({ error: "Invalid credentials" });
       }
@@ -39,8 +41,10 @@ router.post("/register", async (req, res) => {
   } else {
     try {
       const checkUser = await Users.findBy({ username });
+
       if (checkUser) {
         res.status(400).json({ error: "User already exists" });
+
       } else {
         const hash = bcrypt.hashSync(password, 10);
         req.body.password = hash;
@@ -48,6 +52,7 @@ router.post("/register", async (req, res) => {
         const [id] = await Users.add(req.body);
 
         const user = await Users.get(id);
+
         if (user) {
           const token = tokenService.generateToken(user);
 
@@ -56,6 +61,7 @@ router.post("/register", async (req, res) => {
             token,
             username: user.username
           });
+
         } else {
           res.status(404).json({ error: "Error registering user" });
         }
