@@ -29,6 +29,22 @@ describe("/api/users/:id/faves", () => {
 
         expect(res.body).toBeInstanceOf(Array);
       });
+      describe("add()", () => {
+        it("should add a new fave", async () => {
+          const res = await request(server)
+            .post("/api/users/1/faves")
+            .send({ songId: 1 });
+          expect(res.status).toBe(201);
+        });
+      });
+      describe("remove()", () => {
+        it("should remove an existing fave", async () => {
+          const res = await request(server)
+            .delete("/api/users/1/faves")
+            .send({ songId: 1 });
+          expect(res.status).toBe(204);
+        });
+      });
     });
   });
 });
