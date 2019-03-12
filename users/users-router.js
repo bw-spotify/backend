@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const bcrypt = require("bcryptjs");
 
 const Users = require("./users-model.js");
+const Faves = require("../faves/faves-model.js");
 
 router.get("/", async (req, res) => {
   try {
@@ -18,15 +18,6 @@ router.get("/:id", async (req, res) => {
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json({ error: "Error retrieving user" });
-  }
-});
-
-router.get("/:id/faves", async (req, res) => {
-  try {
-    const faves = await Users.getUserFaves(req.params.id);
-    res.status(200).json(faves);
-  } catch (error) {
-    res.status(500).json({ error: "Error retrieving faves" });
   }
 });
 
