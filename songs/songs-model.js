@@ -35,5 +35,28 @@ module.exports = {
     return db("similars")
       .where({ track_id: id })
       .first();
+  },
+  search(query) {
+    let songsAccess = db("songs");
+
+    const {
+      page = 1,
+      limit = 10,
+      sortby = "artist_name",
+      sortdir = "desc",
+      id,
+      q
+    } = query;
+
+    const offset = limit * (page - 1);
+
+    return db("songs")
+      .orderBy(sortby, sortdir)
+      .limit(limit)
+      .offset(offset)
+      .where("artist_name", "like", `%${q}%`)
+      .orWhere(function() {
+        this.where("track_name", "like", `%${q}%`);
+      });
   }
 };
