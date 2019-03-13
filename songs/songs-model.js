@@ -20,9 +20,11 @@ module.exports = {
       return Promise.all(promises).then(function(results) {
         let [songs, similars] = results;
         songs.similars = similars;
-
+        
         return songs;
       });
+
+      
     }
     const offset = limit * (page - 1);
 
