@@ -36,8 +36,8 @@ https://bw-spotify.netlify.com/api
 | GET    | /api/songs?        | get a list songs using pagination or a single song by id (with suggested songs) |
 | GET    | /api/songs/search? | search songs by query string                              |
 | GET    | /api/faves         | add business to your bookmarks                            |
-| POST   | /api/faves/:id     | add a favorite song to current user                       |
-| DELETE | /api/faves/:id     | remove a favorite song from current user                  |
+| POST   | /api/faves         | add a favorite song to current user                       |
+| DELETE | /api/faves         | remove a favorite song from current user                  |
 
 # _Auth_
 
