@@ -1,10 +1,10 @@
 # Clarify API
 
 _Allows a user to search through a selection of Spotify's Kaggle Dataset and return suggested songs based on prebuilt DS model._
+
 #### Deployed API
 
 https://bw-spotify.netlify.com/api
-
 
 #### Project Management
 
@@ -23,21 +23,19 @@ https://bw-spotify.netlify.com/api
   - [Dependencies](#dependencies)
   - [Author](#author)
 
-
-
 ## Summary Table of API Endpoints
 
-| Type   | Endpoints          | Description                                               |
-| ------ | ------------------ | --------------------------------------------------------- |
-| POST   | /api/login         | Login                                                     |
-| POST   | /api/register      | Register                                                  |
-| GET    | /api/users         | get all users                                             |
-| GET    | /api/users/:id     | get user by id                                            |
+| Type   | Endpoints          | Description                                                                     |
+| ------ | ------------------ | ------------------------------------------------------------------------------- |
+| POST   | /api/login         | Login                                                                           |
+| POST   | /api/register      | Register                                                                        |
+| GET    | /api/users         | get all users                                                                   |
+| GET    | /api/users/:id     | get user by id                                                                  |
 | GET    | /api/songs?        | get a list songs using pagination or a single song by id (with suggested songs) |
-| GET    | /api/songs/search? | search songs by query string                              |
-| GET    | /api/faves         | add business to your bookmarks                            |
-| POST   | /api/faves/:id     | add a favorite song to current user                       |
-| DELETE | /api/faves/:id     | remove a favorite song from current user                  |
+| GET    | /api/songs/search? | search songs by query string                                                    |
+| GET    | /api/faves         | get all favs by logged in user                                                  |
+| POST   | /api/faves     | add a favorite song to logged in user                                           |
+| DELETE | /api/faves     | remove a favorite song from logged in user                                      |
 
 # _Auth_
 
@@ -131,7 +129,7 @@ _[GET] URL: /api/songs (with pagination, and sorting)_
 
 _Example_
 
-```javascript
+```
 /songs?page=1&limit=10sortby=artist_name&sortdir=desc
 ```
 
@@ -160,7 +158,7 @@ _[GET] URL: /api/songs (includes 10 predicted songs)_
 
 _Example_
 
-```javascript
+```
 /songs?id=5RkS8NsjKoSCh5jpctvEdT
 ```
 
@@ -208,7 +206,7 @@ _[GET] URL: /api/songs/search (with pagination, and sorting)_
 
 _Example_
 
-```javascript
+```
 songs/search?q="Game"
 ```
 
@@ -294,6 +292,12 @@ _Reponses_
 ## Delete Fave
 
 _[DELETE] URL: /api/faves (uses logged in users token)_
+
+**Schema:**
+
+| name   | type   | required | description    |
+| :----- | :----- | :------- | :------------- |
+| songId | string | yes      | song id string |
 
 _Example_
 
