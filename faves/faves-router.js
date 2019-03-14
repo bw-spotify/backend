@@ -37,7 +37,9 @@ router.delete("/", async (req, res) => {
       const count = await Faves.remove(req.decoded.userId, req.body.songId);
 
       if (count > 0) {
-        res.status(204).end();
+        // res.status(204).end();
+        const faves = await Faves.getUserFaves(req.decoded.userId);
+        res.status(200).json(faves);
       } else {
         res.status(404).json({ error: "Fave not found" });
       }
