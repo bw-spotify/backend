@@ -2,9 +2,9 @@
 
 _Allows a user to search through a selection of Spotify's Kaggle Dataset and return suggested songs based on prebuilt DS model._
 
-#### Deployed API
+#### Deployed
 
-https://bw-spotify.netlify.com/api
+https://bw-spotify.netlify.com/
 
 #### Project Management
 
