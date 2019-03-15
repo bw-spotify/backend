@@ -133,7 +133,7 @@ _Example_
 /songs?page=1&limit=10sortby=artist_name&sortdir=desc
 ```
 
-_Reponses_
+_Responses_
 
 ```javascript
 [
@@ -162,7 +162,7 @@ _Example_
 /songs?id=5RkS8NsjKoSCh5jpctvEdT
 ```
 
-_Reponses_
+_Responses_
 
 ```javascript
 [
@@ -210,7 +210,7 @@ _Example_
 songs/search?q="Game"
 ```
 
-_Reponses_
+_Responses_
 
 ```javascript
 [
@@ -242,7 +242,7 @@ _Reponses_
 
 _[GET] URL: /api/faves (uses logged in users token)_
 
-_Reponses_
+_Responses_
 
 ```javascript
 [
@@ -272,7 +272,7 @@ _Example_
 }
 ```
 
-_Reponses_
+_Responses_
 
 ```javascript
 [
@@ -307,7 +307,7 @@ _Example_
 }
 ```
 
-_Reponses_
+_Responses_
 
 _(only a 204)_
 
