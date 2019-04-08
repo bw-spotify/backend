@@ -17,7 +17,7 @@ https://bw-spotify.netlify.com/
 ## Table of Contents
 
 - [Clarify API](#clarifyapi)
-  - [API - https://bw-spotify-backend.herokuapp.com/](#api--httpsyelpfeelersherokuappcom)
+  - [API - https://bw-spotify-backend.herokuapp.com/api](#api--httpsyelpfeelersherokuappcom)
   - [Project Management](#project-management)
   - [Summary Table of API Endpoints](#summary-table-of-api-endpoints)
     - [Auth](#auth)
