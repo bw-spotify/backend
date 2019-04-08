@@ -2,6 +2,8 @@
 
 _Allows a user to search through a selection of Spotify's Kaggle Dataset and return suggested songs based on prebuilt DS model._
 
+https://bw-spotify-backend.herokuapp.com/
+
 #### Deployed
 
 https://bw-spotify.netlify.com/
@@ -13,7 +15,7 @@ https://bw-spotify.netlify.com/
 ## Table of Contents
 
 - [Clarify API](#clarifyapi)
-  - [API - https://bw-spotify.netlify.com/api](#api--httpsyelpfeelersherokuappcom)
+  - [API - https://bw-spotify-backend.herokuapp.com/](#api--httpsyelpfeelersherokuappcom)
   - [Project Management](#project-management)
   - [Summary Table of API Endpoints](#summary-table-of-api-endpoints)
     - [Auth](#auth)
