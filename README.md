@@ -2,7 +2,9 @@
 
 _Allows a user to search through a selection of Spotify's Kaggle Dataset and return suggested songs based on prebuilt DS model._
 
-https://bw-spotify-backend.herokuapp.com/
+#### API
+
+https://bw-spotify-backend.herokuapp.com/api
 
 #### Deployed
 
