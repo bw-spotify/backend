@@ -2,9 +2,13 @@
 
 _Allows a user to search through a selection of Spotify's Kaggle Dataset and return suggested songs based on prebuilt DS model._
 
-#### Deployed API
+#### API
 
-https://bw-spotify.netlify.com/api
+https://bw-spotify-backend.herokuapp.com/api
+
+#### Deployed
+
+https://bw-spotify.netlify.com/
 
 #### Project Management
 
@@ -13,7 +17,7 @@ https://bw-spotify.netlify.com/api
 ## Table of Contents
 
 - [Clarify API](#clarifyapi)
-  - [API - https://bw-spotify.netlify.com/api](#api--httpsyelpfeelersherokuappcom)
+  - [API - https://bw-spotify-backend.herokuapp.com/api](#api--httpsyelpfeelersherokuappcom)
   - [Project Management](#project-management)
   - [Summary Table of API Endpoints](#summary-table-of-api-endpoints)
     - [Auth](#auth)
@@ -133,7 +137,7 @@ _Example_
 /songs?page=1&limit=10sortby=artist_name&sortdir=desc
 ```
 
-_Reponses_
+_Responses_
 
 ```javascript
 [
@@ -162,7 +166,7 @@ _Example_
 /songs?id=5RkS8NsjKoSCh5jpctvEdT
 ```
 
-_Reponses_
+_Responses_
 
 ```javascript
 [
@@ -210,7 +214,7 @@ _Example_
 songs/search?q="Game"
 ```
 
-_Reponses_
+_Responses_
 
 ```javascript
 [
@@ -242,7 +246,7 @@ _Reponses_
 
 _[GET] URL: /api/faves (uses logged in users token)_
 
-_Reponses_
+_Responses_
 
 ```javascript
 [
@@ -272,7 +276,7 @@ _Example_
 }
 ```
 
-_Reponses_
+_Responses_
 
 ```javascript
 [
@@ -307,7 +311,7 @@ _Example_
 }
 ```
 
-_Reponses_
+_Responses_
 
 _(only a 204)_
 
